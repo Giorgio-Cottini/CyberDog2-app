@@ -55,17 +55,15 @@ Version `v2.0.0` passes 821 tests against the emulator. A Gazebo run passed the 
 stand, drive, trick, emergency stop while walking, and lie down. The probe then ran a full
 session on a real CyberDog 2 with the Chinese firmware, and every step passed.
 
-> [!IMPORTANT]
-> **The emergency stop has not been tested on the real dog.** The probe does not trigger it on
-> purpose. It passed in the emulator and in Gazebo only. On the real dog the servo watchdog stood
-> the dog up again 0.61 to 0.72 s after the last walk frame, later than Xiaomi's source code
-> says. The SDK therefore sends a third ESTOP 1.0 s after the last frame.
+On the real dog the servo watchdog stood the dog up again 0.61 to 0.72 s after the last walk
+frame, later than Xiaomi's source code says. The SDK therefore sends a third ESTOP 1.0 s after
+the last frame. With that fix, an emergency stop while the dog walked kept the dog down.
 
 | | Emulator | Gazebo simulator | Real dog |
 |---|:-:|:-:|:-:|
 | Connection, status, battery | ✅ | ✅ | ✅ |
 | Driving, stand, sit, tricks, lie down | ✅ | ✅ | ✅ |
-| Emergency stop | ✅ | ✅ | ❌ not tested |
+| Emergency stop | ✅ | ✅ | ✅ while walking |
 | Posture | ✅ | head up only | ✅ |
 | LEDs | ✅ | n/a | ✅ |
 | Electronic skin | ✅ | n/a | n/a: the test dog has none |

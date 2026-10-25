@@ -3,6 +3,13 @@
 This file follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the versions
 follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- The emergency stop passed on the real dog: stopped while walking, the dog stayed down. The
+  README shows the result.
+
 ## [2.0.0] - 2026-10-26
 
 The first public release. It contains the v1 controller and the v2 rewrite. The probe ran a
@@ -39,4 +46,5 @@ the real dog.
 - The repository does not include the mTLS certificates. The README explains how to download
   them from Xiaomi's repository.
 
+[Unreleased]: https://github.com/Giorgio-Cottini/cyberdog2-control/compare/v2.0.0...HEAD
 [2.0.0]: https://github.com/Giorgio-Cottini/cyberdog2-control/releases/tag/v2.0.0
