@@ -1,0 +1,43 @@
+// Copyright 2015 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// Source: MiRoboticsLab/bridges, cyberdog_grpc/protos/cyberdog_app.proto, commit 047a0a4.
+// Modified by Giorgio Cottini, 2026: comments, the java/objc options and the nested
+// SendRequest.name_code enum removed, declarations condensed. The services, messages,
+// fields and field numbers are unchanged, so the wire format is the same.
+
+syntax = "proto3";
+package grpcapi;
+
+service GrpcApp {
+    rpc sendMsg(SendRequest) returns (stream RecResponse) {}
+    rpc heartbeat(Ticks) returns(Result) {}
+    rpc getFile(SendRequest) returns (stream FileChunk) {}
+}
+message MotionStatus{ int32 motion_id = 1; }
+message TaskStatus{ fixed32 task_status = 1; int32 task_sub_status = 2; }
+message SelfCheckStatus{ int32 code = 1; string description = 2; }
+message StateSwitchStatus{ int32 state = 1; int32 code = 2; }
+message ChargingStatus{ bool wired_charging = 1; bool wireless_charging = 2; }
+message Ticks{
+    string ip = 1; fixed32 wifi_strength = 2; fixed32 battery_power = 3;
+    bool internet = 4; string sn = 5; MotionStatus motion_status = 6;
+    TaskStatus task_status = 7; SelfCheckStatus self_check_status = 8;
+    StateSwitchStatus state_switch_status = 9; ChargingStatus charging_status = 10;
+    bool audio = 11;
+}
+message SendRequest { fixed32 nameCode = 1; string params = 2; }
+message RecResponse { fixed32 nameCode = 1; string data = 2; }
+message Result { string result = 1; }
+message FileChunk { fixed32 error_code = 1; string file_name = 2; fixed32 file_size = 3; bytes buffer = 4; }

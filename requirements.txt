@@ -1,0 +1,9 @@
+# The versions tested on Windows (Python 3.12). The v2 SDK, app and emulator also run with
+# grpcio 1.66; the generated v1 code in proto/ needs grpcio 1.84 and protobuf 7.35.1.
+grpcio>=1.84
+protobuf>=7.35.1
+pytest>=8
+
+# Optional, only for make_qr.py (the Wi-Fi QR code for the dog):
+# pycryptodome
+# qrcode

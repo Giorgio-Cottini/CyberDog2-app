@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+pylibs/
+dist/
+qr.html
+*.jpg
+*.zip
+.pytest_cache/
+tools/probe_results-*.json
+# mTLS certificates: download them as the README explains, never commit them
+certs/
+dog_server.pem
+# local tool settings
+.claude/
+# working notes for resuming the work with an assistant; kept local
+HANDOFF.md
+docs/design/RESUME.md

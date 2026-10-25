@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CyberDog 2</title>
+<style>
+  :root{ --bg:#0b0d10; --panel:#14181d; --edge:#232a31; --fg:#e8edf2; --mut:#8b97a3;
+         --accent:#39d0d8; --danger:#ff4d4f; --ok:#36d399; --warn:#f7b955; }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);
+    font:14px/1.4 system-ui,Segoe UI,Roboto,sans-serif;overflow:hidden}
+  #stage{position:fixed;inset:0;background:#000}
+  #snap{width:100%;height:100%;object-fit:contain;background:#000;display:none}
+  #novideo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:var(--mut);flex-direction:column;gap:12px;text-align:center;padding:24px}
+  #novideo button{pointer-events:auto}
+
+  /* left panel */
+  #panel{position:fixed;top:0;left:0;height:100%;width:320px;background:var(--panel);
+    border-right:1px solid var(--edge);transform:translateX(0);transition:transform .22s ease;
+    display:flex;flex-direction:column;z-index:5;box-shadow:2px 0 18px #0008}
+  #panel.collapsed{transform:translateX(-320px)}
+  #toggle{position:fixed;top:12px;left:12px;z-index:6;width:42px;height:42px;border-radius:10px;
+    border:1px solid var(--edge);background:#14181dcc;color:var(--fg);font-size:18px;cursor:pointer;
+    backdrop-filter:blur(4px);transition:left .22s ease}
+  #panel:not(.collapsed) ~ #toggle{left:332px}
+  .head{padding:16px 16px 10px;border-bottom:1px solid var(--edge)}
+  .head h1{margin:0;font-size:15px;letter-spacing:.04em}
+  .head .sub{color:var(--mut);font-size:12px;margin-top:2px}
+  .body{padding:14px 16px;overflow:auto;flex:1}
+  .grp{margin-bottom:18px}
+  .grp h2{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:0 0 8px}
+  .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  button.cmd{padding:11px 10px;border-radius:9px;border:1px solid var(--edge);background:#1b2127;
+    color:var(--fg);cursor:pointer;font-size:13px;display:flex;flex-direction:column;align-items:center;gap:3px}
+  button.cmd:hover{border-color:var(--accent)}
+  button.cmd .k{font-size:10px;color:var(--mut)}
+  button.cmd.wide{grid-column:1/3}
+  button.danger{background:#2a1416;border-color:#5a2226;color:#ffd7d8}
+  button.danger:hover{border-color:var(--danger)}
+  .stat{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #1c2329}
+  .stat b{font-weight:600}
+  .pill{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--edge)}
+  .arm{display:flex;align-items:center;gap:10px;padding:10px;border-radius:9px;
+    background:#1b2127;border:1px solid var(--edge)}
+  .switch{position:relative;width:46px;height:26px;flex:none}
+  .switch input{display:none}
+  .slider{position:absolute;inset:0;background:#3a434c;border-radius:999px;transition:.15s;cursor:pointer}
+  .slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;
+    border-radius:50%;transition:.15s}
+  .switch input:checked + .slider{background:var(--ok)}
+  .switch input:checked + .slider:before{transform:translateX(20px)}
+  .warn{color:var(--warn);font-size:12px;margin-top:8px}
+  .movepad{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+  .movepad button{aspect-ratio:1;border-radius:9px;border:1px solid var(--edge);background:#1b2127;
+    color:var(--fg);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .movepad button:active,.movepad button.on{background:var(--accent);color:#04161a;border-color:var(--accent)}
+  .movepad .sp{visibility:hidden}
+  .range{width:100%;margin-top:6px}
+  #log{font-family:ui-monospace,Consolas,monospace;font-size:11px;color:var(--mut);
+    max-height:96px;overflow:auto;white-space:pre-wrap;border-top:1px solid var(--edge);padding:8px 16px}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mut);margin-right:6px}
+  .dot.ok{background:var(--ok)} .dot.bad{background:var(--danger)}
+</style>
+</head>
+<body>
+  <div id="stage">
+    <img id="snap" alt="">
+    <div id="novideo">
+      <div>Live view off</div>
+      <button class="cmd" style="width:auto" onclick="toggleLive()">Start live view</button>
+      <div style="color:var(--mut);font-size:12px;max-width:320px">
+        Full-resolution stills streamed as MJPEG from a parallel grabber pool
+        (~2 fps). Frames are pulled and auto-deleted on the dog.
+      </div>
+    </div>
+    <div id="liveBadge" style="position:absolute;top:12px;right:14px;display:none">
+      <span class="pill" style="border-color:var(--ok);color:var(--ok)">● live</span>
+      <button class="cmd" style="padding:6px 10px" onclick="toggleLive()">Stop</button>
+    </div>
+  </div>
+
+  <aside id="panel">
+    <div class="head">
+      <h1>CYBERDOG&nbsp;2</h1>
+      <div class="sub"><span id="connDot" class="dot"></span><span id="conn">connecting…</span></div>
+    </div>
+    <div class="body">
+
+      <div class="grp">
+        <h2>Posture</h2>
+        <div class="btns">
+          <button class="cmd" onclick="cmd('stand')">Stand up<span class="k">R</span></button>
+          <button class="cmd" onclick="cmd('lie')">Lie down<span class="k">F</span></button>
+          <button class="cmd wide" onclick="cmd('stand_posture')">Standing posture</button>
+          <button class="cmd danger wide" onclick="cmd('estop')">EMERGENCY STOP<span class="k">Space</span></button>
+        </div>
+      </div>
+
+      <div class="grp">
+        <h2>Movement</h2>
+        <div class="arm">
+          <label class="switch"><input type="checkbox" id="arm" onchange="arm(this.checked)">
+            <span class="slider"></span></label>
+          <div><b>Arm movement</b><div style="color:var(--mut);font-size:12px">keys drive the trot gait</div></div>
+        </div>
+        <div class="warn" id="armWarn">Disarmed. While the dog is on the charger, keep this off.</div>
+        <div class="movepad">
+          <button class="sp"></button>
+          <button data-k="w">W</button>
+          <button class="sp"></button>
+          <button data-k="a">A</button>
+          <button data-k="s">S</button>
+          <button data-k="d">D</button>
+          <button data-k="q">Q</button>
+          <button class="sp"></button>
+          <button data-k="e">E</button>
+        </div>
+        <div style="color:var(--mut);font-size:12px;margin-top:8px">
+          W/S forward·back · A/D turn · Q/E strafe. Hold to move, release to stop.
+        </div>
+      </div>
+
+      <div class="grp">
+        <h2>Audio</h2>
+        <div class="btns">
+          <button class="cmd" onclick="cmd('audio',{enable:false})">Mute actions</button>
+          <button class="cmd" onclick="cmd('audio',{enable:true})">Unmute</button>
+        </div>
+        <input class="range" type="range" min="0" max="100" value="50"
+               onchange="cmd('volume',{value:+this.value})"> <span style="color:var(--mut);font-size:12px">volume</span>
+      </div>
+
+      <div class="grp">
+        <h2>Status</h2>
+        <div class="stat"><span>Battery</span><b id="batt">—</b></div>
+        <div class="stat"><span>Posture</span><b id="posture">—</b></div>
+        <div class="stat"><span>Charging</span><b id="charge">—</b></div>
+        <div class="stat"><span>Temp</span><b id="temp">—</b></div>
+      </div>
+    </div>
+    <div id="log"></div>
+  </aside>
+  <button id="toggle" onclick="togglePanel()">☰</button>
+
+<script>
+const $ = s => document.querySelector(s);
+function logln(m){ const l=$("#log"); l.textContent=(new Date().toLocaleTimeString()+"  "+m+"\n"+l.textContent).slice(0,4000); }
+
+async function cmd(action, extra){
+  try{
+    const r = await fetch("/cmd",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(Object.assign({action},extra||{}))});
+    const j = await r.json();
+    if(!j.ok) logln(action+" ERR: "+j.error);
+    else if(action!=="move") logln(action+" -> "+JSON.stringify(j.result));
+    return j;
+  }catch(e){ logln(action+" fail: "+e); }
+}
+
+function togglePanel(){ $("#panel").classList.toggle("collapsed"); }
+
+// ---- movement -------------------------------------------------------------
+let armed=false;
+const KEY={ w:[1,0,0], s:[-1,0,0], a:[0,0,1], d:[0,0,-1], q:[0,1,0], e:[0,-1,0] }; // [fwd,strafe,turn]
+const down=new Set();
+function arm(on){
+  armed=on;
+  cmd('safety',{enabled:on});
+  $("#armWarn").textContent = on
+    ? "Armed. Floor only, ~1.5 m clear. Release keys to stop."
+    : "Disarmed. While the dog is on the charger, keep this off.";
+  if(!on){ down.clear(); refreshKeys(); pushMove(); }
+}
+function vec(){
+  let f=0,s=0,t=0;
+  down.forEach(k=>{ const v=KEY[k]; if(v){ f+=v[0]; s+=v[1]; t+=v[2]; } });
+  return [Math.sign(f),Math.sign(s),Math.sign(t)];
+}
+function pushMove(){
+  const [f,s,t]=vec();
+  const walking = armed && (f||s||t)!==0 && down.size>0;
+  // server clamps to safe m/s; we send unit directions scaled to its gentle max
+  cmd('move',{vx:f, vy:s, vyaw:t, walking});
+}
+function refreshKeys(){ document.querySelectorAll('.movepad button[data-k]').forEach(b=>
+  b.classList.toggle('on', down.has(b.dataset.k))); }
+
+function keyDown(k){ if(!(k in KEY)) return; if(!down.has(k)){ down.add(k); refreshKeys(); pushMove(); } }
+function keyUp(k){ if(down.delete(k)){ refreshKeys(); pushMove(); } }
+
+document.addEventListener("keydown",e=>{
+  if(e.repeat) return;
+  const k=e.key.toLowerCase();
+  if(k===" "){ e.preventDefault(); cmd('estop'); return; }
+  if(k==="r"){ cmd('stand'); return; }
+  if(k==="f"){ cmd('lie'); return; }
+  keyDown(k);
+});
+document.addEventListener("keyup",e=>keyUp(e.key.toLowerCase()));
+window.addEventListener("blur",()=>{ down.clear(); refreshKeys(); pushMove(); });
+// pad buttons also drive (pointer)
+document.querySelectorAll('.movepad button[data-k]').forEach(b=>{
+  const k=b.dataset.k;
+  b.addEventListener("pointerdown",e=>{e.preventDefault();keyDown(k);});
+  b.addEventListener("pointerup",()=>keyUp(k));
+  b.addEventListener("pointerleave",()=>keyUp(k));
+});
+
+// ---- live view (long-poll of pooled frames) -------------------------------
+// MJPEG multipart did not render in this pane, so each new pooled frame is
+// pulled as a JPEG blob and swapped into the <img>. The /snapshot long-poll
+// returns one frame per grabber generation, so the loop runs at the pool rate
+// without re-fetching identical frames.
+let liveOn=false, liveGen=-1, liveURL=null;
+const snap=$("#snap");
+async function fetchFrame(){
+  if(!liveOn) return;
+  try{
+    const r = await fetch("/snapshot?after="+liveGen);
+    if(!liveOn) return;
+    if(r.ok){
+      const g = r.headers.get("X-Gen"); if(g!==null) liveGen = parseInt(g);
+      const blob = await r.blob();
+      const url = URL.createObjectURL(blob);
+      const old = liveURL; liveURL = url;
+      snap.src = url;
+      snap.style.display="block"; $("#novideo").style.display="none";
+      if(old) URL.revokeObjectURL(old);
+    } else {
+      logln("snapshot "+r.status);
+    }
+  }catch(e){ if(liveOn) logln("snapshot fail: "+e); }
+  if(liveOn) setTimeout(fetchFrame, 80);   // yield, then long-poll the next frame
+}
+async function toggleLive(){
+  if(liveOn){
+    liveOn=false;
+    $("#liveBadge").style.display="none";
+    snap.style.display="none"; $("#novideo").style.display="flex";
+    $("#novideo").firstElementChild.textContent="Live view off";
+    if(liveURL){ URL.revokeObjectURL(liveURL); liveURL=null; }
+    await cmd('cam_stop'); logln("live view stopped");
+  } else {
+    liveOn=true; liveGen=-1;
+    $("#liveBadge").style.display="block";
+    $("#novideo").firstElementChild.textContent="Starting camera…";
+    await cmd('cam_start');
+    logln("live view started (long-poll, parallel grabbers)");
+    fetchFrame();
+  }
+}
+
+// ---- telemetry via SSE ----------------------------------------------------
+const es = new EventSource("/events");
+es.onopen = ()=>{ $("#conn").textContent="bridge connected"; $("#connDot").className="dot ok"; };
+es.onerror = ()=>{ $("#conn").textContent="bridge lost"; $("#connDot").className="dot bad"; };
+es.onmessage = ev=>{
+  let m; try{ m=JSON.parse(ev.data); }catch(e){ return; }
+  if(m.type==="telemetry"){
+    const t=m.tel||{};
+    $("#batt").textContent = t.battery!=null ? t.battery+" %" : "—";
+    $("#posture").textContent = t.standing==null ? "—" : (t.standing ? "standing" : "down");
+    $("#temp").textContent = t.temp!=null ? t.temp+" °C" : "—";
+    $("#charge").textContent = t.wired_charging ? "wired" : (t.wireless_charging ? "wireless" : "no");
+    $("#conn").textContent = "dog online";
+  } else if(m.type==="log"){ logln(m.msg); }
+};
+
+// Safety: always start disarmed and force the server to match, so a stale
+// server-side armed state can never outlive a page reload.
+(function(){ const a=$("#arm"); if(a) a.checked=false; })();
+cmd('safety',{enabled:false});
+cmd('info');
+</script>
+</body>
+</html>
