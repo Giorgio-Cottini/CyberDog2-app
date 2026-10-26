@@ -15,3 +15,9 @@ dog_server.pem
 # working notes for resuming the work with an assistant; kept local
 HANDOFF.md
 docs/design/RESUME.md
+# voice pack (tools/voice_pack.py): build outputs, speech cache, the dog's original sound.toml,
+# and your own recordings
+voices/out*/
+voices/tts/
+voices/backup/
+voices/rec/

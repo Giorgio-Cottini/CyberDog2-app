@@ -1,0 +1,230 @@
+﻿priority;id;where;file;heard_log;fetched_nginx;choice;it;meaning_en;zh;note
+1;51;board;camera_start_photos;8403;;click;;Taking a photo;拍照;"needs a sound.toml entry and one reboot; camera module asks for it thousands of times; shutter click or silence"
+1;124;board;ai_please_enable;245;;rec;Assistente vocale non disponibile.;Log in to the app account to enable XiaoAI online features;请登录app账号以启用小爱在线功能;"needs a sound.toml entry and one reboot; most frequent: cloud refuses the login (error 401); alternative: silence"
+1;31038;sd;basis/self_check_start.opus;24;67;rec;Avvio il controllo. Attendi.;Starting self-check, please wait;开始自检，请等待;
+1;31058;sd;basis/Algorithm_module_load_success.opus;20;61;rec;Moduli caricati.;Algorithm modules loaded;;meaning from the file name
+1;16;board;wait_connect_network;79;;rec;In attesa della rete.;Waiting to connect to the network;;"needs a sound.toml entry and one reboot; meaning from the file name"
+1;54;sd;audio/stop_picture_transmit.opus;12;58;rec;Trasmissione video terminata.;Image stream stopped;;meaning from the file name
+1;10030;sd;power/percent_30.opus;11;20;rec;Batteria sotto il trenta per cento. Ricaricami presto.;Battery below 30%, charge soon;电量低于百分之三十，请尽快充电!;
+1;2002;sd;basis/will_stand_up.opus;1;29;rec;Sto per alzarmi.;About to stand up;;meaning from the file name
+1;10020;sd;power/percent_20.opus;9;17;rec;Batteria sotto il venti per cento. Alcune funzioni sono limitate.;Battery below 20%, some functions limited;电量低于百分之二十，部分功能受限!;
+1;60;board;self_check_success;22;;rec;Controllo completato. Sono pronto!;Self-check done, ready!;自检完成,状态就绪!;needs a sound.toml entry and one reboot
+1;55;sd;audio/stop_video.opus;4;14;rec;Registrazione terminata.;Video recording stopped;;meaning from the file name
+1;31000;sd;tracking/follow_tags_start.opus;0;18;rec;Seguo il tag.;Tag following on;启动标签跟随;
+1;31003;sd;tracking/follow_tags_stop.opus;0;18;rec;Smetto di seguire il tag.;Tag following off;关闭标签跟随;
+1;10005;sd;power/percent_5.opus;6;11;rec;Batteria sotto il cinque per cento. Ricaricami subito.;Battery below 5%, almost empty, charge soon;电量低于百分之五，电量即将耗尽，请尽快充电;
+1;15;board;is_connecting;16;;rec;Connessione in corso.;Connecting;;"needs a sound.toml entry and one reboot; meaning from the file name"
+1;1;board;wifi_enter_connect_mode;15;;rec;Entro in modalità connessione.;Entering connection mode;进入连接模式;needs a sound.toml entry and one reboot
+1;50;board;camera_start_pic_transfer;14;;rec;Trasmissione video avviata.;Starting the image stream;启动图传;needs a sound.toml entry and one reboot
+1;10000;sd;power/percent_0.opus;5;8;rec;Batteria scarica. Mi spengo.;Battery empty, shutting down;电量为零，关机中;
+1;2001;sd;wifi/connect_network_successful.opus;4;8;rec;Wi-Fi connesso.;Wi-Fi connected, internet reachable;目标WIFI连接成功，可以访问互联网;
+1;31001;sd;tracking/follow_person_start.opus;0;12;rec;Ti seguo.;Person following on;启动人体跟随;
+1;31004;sd;tracking/follow_person_stop.opus;0;12;rec;Smetto di seguirti.;Person following off;关闭人体跟随;
+1;10;board;wifi_exit_connection_mode;11;;rec;Esco dalla modalità connessione.;Leaving connection mode;退出连接模式;needs a sound.toml entry and one reboot
+1;9;board;wifi_connection_failed2;8;;rec;Connessione Wi-Fi non riuscita. Riprova.;Wi-Fi connection failed (timeout or interruption);目标WIFI连接失败，其他错误（超时或中断）;needs a sound.toml entry and one reboot
+1;7;board;wifi_connection_failed0;5;;rec;Connessione Wi-Fi non riuscita. Controlla il nome della rete.;Wi-Fi connection failed, check the network name;目标WIFI连接失败，请核对WIFI名称;needs a sound.toml entry and one reboot
+1;52;board;camera_take_videos;4;;rec;Registrazione avviata.;Starting video recording;启动录像;needs a sound.toml entry and one reboot
+1;53;board;camera_video_recordig;4;;rec;Registrazione in corso.;Recording;录像中;needs a sound.toml entry and one reboot
+1;17;board;connect_network_failed_retry;2;;rec;Connessione alla rete non riuscita. Riprova.;Network connection failed, try again;;"needs a sound.toml entry and one reboot; meaning from the file name"
+1;31015;sd;basis/motion_self_check_failed.opus;1;0;rec;Controllo dei motori non riuscito.;Motion (motors) self-check failed;motion自检失败，状态异常;
+1;1095;sd;power/power95.opus;6;12;tts;Batteria al 95 per cento.;Battery at 95%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1090;sd;power/power90.opus;6;8;tts;Batteria al 90 per cento.;Battery at 90%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1094;sd;power/power94.opus;0;11;tts;Batteria al 94 per cento.;Battery at 94%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1040;sd;power/power40.opus;5;5;tts;Batteria al 40 per cento.;Battery at 40%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1057;sd;power/power57.opus;4;5;tts;Batteria al 57 per cento.;Battery at 57%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1081;sd;power/power81.opus;0;9;tts;Batteria al 81 per cento.;Battery at 81%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1041;sd;power/power41.opus;3;5;tts;Batteria al 41 per cento.;Battery at 41%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1089;sd;power/power89.opus;3;5;tts;Batteria al 89 per cento.;Battery at 89%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1099;sd;power/power99.opus;2;6;tts;Batteria al 99 per cento.;Battery at 99%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1043;sd;power/power43.opus;0;6;tts;Batteria al 43 per cento.;Battery at 43%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1054;sd;power/power54.opus;3;3;tts;Batteria al 54 per cento.;Battery at 54%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1055;sd;power/power55.opus;3;3;tts;Batteria al 55 per cento.;Battery at 55%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1092;sd;power/power92.opus;0;6;tts;Batteria al 92 per cento.;Battery at 92%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1091;sd;power/power91.opus;1;4;tts;Batteria al 91 per cento.;Battery at 91%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1042;sd;power/power42.opus;0;4;tts;Batteria al 42 per cento.;Battery at 42%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1069;sd;power/power69.opus;0;4;tts;Batteria al 69 per cento.;Battery at 69%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1072;sd;power/power72.opus;0;4;tts;Batteria al 72 per cento.;Battery at 72%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1082;sd;power/power82.opus;0;4;tts;Batteria al 82 per cento.;Battery at 82%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1097;sd;power/power97.opus;0;4;tts;Batteria al 97 per cento.;Battery at 97%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1064;sd;power/power64.opus;0;3;tts;Batteria al 64 per cento.;Battery at 64%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1065;sd;power/power65.opus;0;3;tts;Batteria al 65 per cento.;Battery at 65%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1067;sd;power/power67.opus;0;3;tts;Batteria al 67 per cento.;Battery at 67%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1080;sd;power/power80.opus;0;3;tts;Batteria al 80 per cento.;Battery at 80%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1005;sd;power/power5.opus;2;0;tts;Batteria al 5 per cento.;Battery at 5%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1052;sd;power/power52.opus;1;0;tts;Batteria al 52 per cento.;Battery at 52%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1001;sd;power/power1.opus;0;0;tts;Batteria al 1 per cento.;Battery at 1%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1002;sd;power/power2.opus;0;0;tts;Batteria al 2 per cento.;Battery at 2%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1003;sd;power/power3.opus;0;0;tts;Batteria al 3 per cento.;Battery at 3%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1004;sd;power/power4.opus;0;0;tts;Batteria al 4 per cento.;Battery at 4%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1006;sd;power/power6.opus;0;0;tts;Batteria al 6 per cento.;Battery at 6%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1007;sd;power/power7.opus;0;0;tts;Batteria al 7 per cento.;Battery at 7%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1008;sd;power/power8.opus;0;0;tts;Batteria al 8 per cento.;Battery at 8%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1009;sd;power/power9.opus;0;0;tts;Batteria al 9 per cento.;Battery at 9%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1010;sd;power/power10.opus;0;0;tts;Batteria al 10 per cento.;Battery at 10%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1011;sd;power/power11.opus;0;0;tts;Batteria al 11 per cento.;Battery at 11%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1012;sd;power/power12.opus;0;0;tts;Batteria al 12 per cento.;Battery at 12%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1013;sd;power/power13.opus;0;0;tts;Batteria al 13 per cento.;Battery at 13%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1014;sd;power/power14.opus;0;0;tts;Batteria al 14 per cento.;Battery at 14%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1015;sd;power/power15.opus;0;0;tts;Batteria al 15 per cento.;Battery at 15%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1016;sd;power/power16.opus;0;0;tts;Batteria al 16 per cento.;Battery at 16%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1017;sd;power/power17.opus;0;0;tts;Batteria al 17 per cento.;Battery at 17%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1018;sd;power/power18.opus;0;0;tts;Batteria al 18 per cento.;Battery at 18%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1019;sd;power/power19.opus;0;0;tts;Batteria al 19 per cento.;Battery at 19%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1020;sd;power/power20.opus;0;0;tts;Batteria al 20 per cento.;Battery at 20%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1021;sd;power/power21.opus;0;0;tts;Batteria al 21 per cento.;Battery at 21%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1022;sd;power/power22.opus;0;0;tts;Batteria al 22 per cento.;Battery at 22%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1023;sd;power/power23.opus;0;0;tts;Batteria al 23 per cento.;Battery at 23%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1024;sd;power/power24.opus;0;0;tts;Batteria al 24 per cento.;Battery at 24%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1025;sd;power/power25.opus;0;0;tts;Batteria al 25 per cento.;Battery at 25%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1026;sd;power/power26.opus;0;0;tts;Batteria al 26 per cento.;Battery at 26%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1027;sd;power/power27.opus;0;0;tts;Batteria al 27 per cento.;Battery at 27%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1028;sd;power/power28.opus;0;0;tts;Batteria al 28 per cento.;Battery at 28%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1029;sd;power/power29.opus;0;0;tts;Batteria al 29 per cento.;Battery at 29%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1030;sd;power/power30.opus;0;0;tts;Batteria al 30 per cento.;Battery at 30%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1031;sd;power/power31.opus;0;0;tts;Batteria al 31 per cento.;Battery at 31%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1032;sd;power/power32.opus;0;0;tts;Batteria al 32 per cento.;Battery at 32%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1033;sd;power/power33.opus;0;0;tts;Batteria al 33 per cento.;Battery at 33%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1034;sd;power/power34.opus;0;0;tts;Batteria al 34 per cento.;Battery at 34%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1035;sd;power/power35.opus;0;0;tts;Batteria al 35 per cento.;Battery at 35%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1036;sd;power/power36.opus;0;0;tts;Batteria al 36 per cento.;Battery at 36%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1037;sd;power/power37.opus;0;0;tts;Batteria al 37 per cento.;Battery at 37%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1038;sd;power/power38.opus;0;0;tts;Batteria al 38 per cento.;Battery at 38%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1039;sd;power/power39.opus;0;0;tts;Batteria al 39 per cento.;Battery at 39%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1044;sd;power/power44.opus;0;0;tts;Batteria al 44 per cento.;Battery at 44%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1045;sd;power/power45.opus;0;0;tts;Batteria al 45 per cento.;Battery at 45%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1046;sd;power/power46.opus;0;0;tts;Batteria al 46 per cento.;Battery at 46%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1047;sd;power/power47.opus;0;0;tts;Batteria al 47 per cento.;Battery at 47%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1048;sd;power/power48.opus;0;0;tts;Batteria al 48 per cento.;Battery at 48%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1049;sd;power/power49.opus;0;0;tts;Batteria al 49 per cento.;Battery at 49%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1050;sd;power/power50.opus;0;0;tts;Batteria al 50 per cento.;Battery at 50%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1051;sd;power/power51.opus;0;0;tts;Batteria al 51 per cento.;Battery at 51%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1053;sd;power/power53.opus;0;0;tts;Batteria al 53 per cento.;Battery at 53%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1056;sd;power/power56.opus;0;0;tts;Batteria al 56 per cento.;Battery at 56%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1058;sd;power/power58.opus;0;0;tts;Batteria al 58 per cento.;Battery at 58%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1059;sd;power/power59.opus;0;0;tts;Batteria al 59 per cento.;Battery at 59%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1060;sd;power/power60.opus;0;0;tts;Batteria al 60 per cento.;Battery at 60%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1061;sd;power/power61.opus;0;0;tts;Batteria al 61 per cento.;Battery at 61%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1062;sd;power/power62.opus;0;0;tts;Batteria al 62 per cento.;Battery at 62%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1063;sd;power/power63.opus;0;0;tts;Batteria al 63 per cento.;Battery at 63%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1066;sd;power/power66.opus;0;0;tts;Batteria al 66 per cento.;Battery at 66%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1068;sd;power/power68.opus;0;0;tts;Batteria al 68 per cento.;Battery at 68%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1070;sd;power/power70.opus;0;0;tts;Batteria al 70 per cento.;Battery at 70%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1071;sd;power/power71.opus;0;0;tts;Batteria al 71 per cento.;Battery at 71%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1073;sd;power/power73.opus;0;0;tts;Batteria al 73 per cento.;Battery at 73%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1074;sd;power/power74.opus;0;0;tts;Batteria al 74 per cento.;Battery at 74%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1075;sd;power/power75.opus;0;0;tts;Batteria al 75 per cento.;Battery at 75%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1076;sd;power/power76.opus;0;0;tts;Batteria al 76 per cento.;Battery at 76%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1077;sd;power/power77.opus;0;0;tts;Batteria al 77 per cento.;Battery at 77%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1078;sd;power/power78.opus;0;0;tts;Batteria al 78 per cento.;Battery at 78%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1079;sd;power/power79.opus;0;0;tts;Batteria al 79 per cento.;Battery at 79%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1083;sd;power/power83.opus;0;0;tts;Batteria al 83 per cento.;Battery at 83%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1084;sd;power/power84.opus;0;0;tts;Batteria al 84 per cento.;Battery at 84%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1085;sd;power/power85.opus;0;0;tts;Batteria al 85 per cento.;Battery at 85%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1086;sd;power/power86.opus;0;0;tts;Batteria al 86 per cento.;Battery at 86%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1087;sd;power/power87.opus;0;0;tts;Batteria al 87 per cento.;Battery at 87%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1088;sd;power/power88.opus;0;0;tts;Batteria al 88 per cento.;Battery at 88%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1093;sd;power/power93.opus;0;0;tts;Batteria al 93 per cento.;Battery at 93%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1096;sd;power/power96.opus;0;0;tts;Batteria al 96 per cento.;Battery at 96%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1098;sd;power/power98.opus;0;0;tts;Batteria al 98 per cento.;Battery at 98%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+1;1100;sd;power/power100.opus;0;0;tts;Batteria al 100 per cento.;Battery at 100%;;"battery level on head touch; recording means 100 numbers; meaning from the file name"
+2;2;board;wifi_enable_connect_mode;0;;tts;Modalità connessione attiva.;Connection mode enabled;开启连接模式;needs a sound.toml entry and one reboot
+2;3;board;wifi_wait_scan_code;0;;tts;Mostrami il codice QR del Wi-Fi.;Show the Wi-Fi QR code to connect;请出示WIFI二维码辅助连接;needs a sound.toml entry and one reboot
+2;4;board;wifi_scan_code_succeed;0;;tts;Codice letto. Mi connetto, attendi.;Code read, connecting, please wait;扫码成功，正在连接，请稍后;needs a sound.toml entry and one reboot
+2;5;board;wifi_connection_succeed0;0;;tts;Wi-Fi connesso.;Wi-Fi connected (old id of 2001);;"needs a sound.toml entry and one reboot; meaning from the file name"
+2;6;board;wifi_connection_succeed1;0;;tts;Wi-Fi connesso, ma senza internet.;Wi-Fi connected, but no internet;目标WIFI连接成功，但不可以访问互联网;needs a sound.toml entry and one reboot
+2;8;board;wifi_connection_failed1;0;;tts;Connessione Wi-Fi non riuscita. Controlla la password.;Wi-Fi connection failed, check the password;目标WIFI连接失败，请核对WIFI密码;needs a sound.toml entry and one reboot
+2;11;board;wifi_offline;0;;tts;Connessione Wi-Fi persa.;Wi-Fi connection lost;当前WIFI已掉线;needs a sound.toml entry and one reboot
+2;12;board;wifi_communication;0;;tts;Comunicazione attiva.;Communicating normally;正常通信中;needs a sound.toml entry and one reboot
+2;13;board;wifi_scan_code_ip_error;0;;tts;Codice QR non valido: indirizzo IP errato.;QR code: wrong IP of the provider;二维码提供方IP错误;needs a sound.toml entry and one reboot
+2;14;board;wifi_scan_code_info_error;0;;tts;Codice QR non valido: mancano i dati del Wi-Fi.;QR code: no Wi-Fi data found;二维码信息错误，未检出到wifi信息;needs a sound.toml entry and one reboot
+2;18;board;wifi_request_close_camera_fail;0;;tts;Non riesco a spegnere la fotocamera.;Could not turn the camera off;请求关闭摄像头失败;needs a sound.toml entry and one reboot
+2;21;board;face_entry_add_face;0;;tts;Registro il tuo viso. Guarda la fotocamera, non coprirti il viso e resta fermo.;Face entry: look at the camera, do not cover the face, keep still;开始录入人脸，请正对摄像头，且勿遮挡人脸，保持稳定;needs a sound.toml entry and one reboot
+2;22;board;face_entry_cancel_add_face;0;;tts;Registrazione del viso annullata.;Face entry cancelled;取消录入人脸;needs a sound.toml entry and one reboot
+2;23;board;face_entry_confirm_last_face;0;;tts;Viso confermato.;Face entry confirmed;确认录入人脸;needs a sound.toml entry and one reboot
+2;24;board;face_entry_update_face;0;;tts;Viso aggiornato.;Face entry updated;更新录入人脸;needs a sound.toml entry and one reboot
+2;25;board;face_entry_delete_face;0;;tts;Viso eliminato.;Face deleted;删除录入人脸;needs a sound.toml entry and one reboot
+2;26;board;face_entry_get_all_faces;0;;tts;Leggo i visi registrati.;Reading the stored faces;获取录入人脸信息;needs a sound.toml entry and one reboot
+2;27;board;face_entry_fix_pose;0;;tts;Guarda la fotocamera.;Look at the camera;请正对摄像头;needs a sound.toml entry and one reboot
+2;28;board;face_entry_fix_pose_left;0;;tts;Gira la testa a sinistra.;Turn your head left;请向左扭头;needs a sound.toml entry and one reboot
+2;29;board;face_entry_fix_pose_right;0;;tts;Gira la testa a destra.;Turn your head right;请向右扭头;needs a sound.toml entry and one reboot
+2;30;board;face_entry_fix_pose_up;0;;tts;Alza la testa.;Raise your head;请向上抬头;needs a sound.toml entry and one reboot
+2;31;board;face_entry_fix_pose_down;0;;tts;Abbassa la testa.;Lower your head;请向下低头;needs a sound.toml entry and one reboot
+2;32;board;face_entry_fix_distance_close;0;;tts;Avvicinati un po'.;Come a bit closer;请距狗头近一点;needs a sound.toml entry and one reboot
+2;33;board;face_entry_fix_distance_near;0;;tts;Allontanati un po'.;Move a bit further away;请距狗头远一点;needs a sound.toml entry and one reboot
+2;34;board;face_entry_fix_stable;0;;tts;Resta fermo.;Keep still;请保持稳定;needs a sound.toml entry and one reboot
+2;35;board;face_entry_mutiple_faces;0;;tts;Vedo più visi.;More than one face detected;检测到多个人脸;needs a sound.toml entry and one reboot
+2;36;board;face_entry_none_faces;0;;tts;Non vedo nessun viso.;No face detected;没有检测到人脸;needs a sound.toml entry and one reboot
+2;37;board;face_entry_timeout;0;;tts;Tempo scaduto. Riprova la registrazione.;Face entry timed out, try again;录入超时，请重新录入;needs a sound.toml entry and one reboot
+2;38;board;face_entry_finish;0;;tts;Viso registrato.;Face entry done;录入成功;needs a sound.toml entry and one reboot
+2;39;board;face_recognition_request;0;;tts;Riconoscimento del viso. Guarda la fotocamera e non coprirti il viso.;Face recognition: look at the camera, do not cover the face;开始人脸识别，请正对摄像头，且勿遮挡人脸;needs a sound.toml entry and one reboot
+2;40;board;face_degree_head_tilt;0;;tts;Tieni la testa dritta.;Do not tilt your head;请不要歪头;needs a sound.toml entry and one reboot
+2;41;board;face_recognition_finsish;0;;tts;Viso riconosciuto.;Face recognized;人脸识别成功;needs a sound.toml entry and one reboot
+2;42;board;face_recogniton_timeout;0;;tts;Riconoscimento scaduto. Riprova.;Face recognition timed out, try again;人脸识别已经超时，请重新尝试;needs a sound.toml entry and one reboot
+2;43;board;face_already_exist;0;;tts;Questo viso è già registrato.;This face is already stored;人脸已存在，请不要录入同一张脸;needs a sound.toml entry and one reboot
+2;61;board;self_check_failed;0;;tts;Controllo non riuscito. Qualcosa non va.;Self-check failed, abnormal state!;自检失败,状态异常!;needs a sound.toml entry and one reboot
+2;125;board;ai_enable_success;0;;tts;Assistente vocale attivo.;XiaoAI online features enabled;小爱在线功能启动;needs a sound.toml entry and one reboot
+2;127;board;ai_service_expired;0;;tts;Accesso all'assistente vocale scaduto.;Voice login expired;语音登录已过期;needs a sound.toml entry and one reboot
+2;31002;sd;tracking/follow_object_start.opus;0;0;tts;Seguo l'oggetto.;Object following on;启动万物跟随;
+2;31005;sd;tracking/follow_object_stop.opus;0;0;tts;Smetto di seguire l'oggetto.;Object following off;关闭万物跟随;
+2;31006;sd;basis/gps_self_check_failed.opus;0;0;tts;Controllo del GPS non riuscito.;GPS self-check failed;gps自检失败，状态异常;
+2;31007;sd;basis/lidar_self_check_failed.opus;0;0;tts;Controllo del lidar non riuscito.;Lidar self-check failed;lidar自检失败，状态异常;
+2;31008;sd;basis/tof_self_check_failed.opus;0;0;tts;Controllo dei sensori di distanza non riuscito.;ToF distance sensors self-check failed;tof自检失败，状态异常;
+2;31009;sd;basis/ultrasonic_self_check_failed.opus;0;0;tts;Controllo del sensore a ultrasuoni non riuscito.;Ultrasonic sensor self-check failed;ultrasonic自检失败，状态异常;
+2;31010;sd;basis/bms_self_check_failed.opus;0;0;tts;Controllo della batteria non riuscito.;Battery (BMS) self-check failed;bms自检失败，状态异常;
+2;31011;sd;basis/led_self_check_failed.opus;0;0;tts;Controllo delle luci non riuscito.;LEDs self-check failed;led自检失败，状态异常;
+2;31012;sd;basis/touch_self_check_failed.opus;0;0;tts;Controllo del sensore tattile non riuscito.;Touch sensor self-check failed;touch自检失败，状态异常;
+2;31013;sd;basis/uwb_self_check_failed.opus;0;0;tts;Controllo dell'UWB non riuscito.;UWB self-check failed;uwb自检失败，状态异常;
+2;31014;sd;basis/audio_self_check_failed.opus;0;0;tts;Controllo dell'audio non riuscito.;Audio self-check failed;audio自检失败，状态异常;
+2;31016;sd;basis/gps_switch_mode_failed.opus;0;0;tts;Cambio modalità del GPS non riuscito.;GPS: switching the working mode failed;gps切换工作模式失败，状态异常;
+2;31017;sd;basis/lidar_switch_mode_failed.opus;0;0;tts;Cambio modalità del lidar non riuscito.;Lidar: switching the working mode failed;lidar切换工作模式失败，状态异常;
+2;31018;sd;basis/tof_switch_mode_failed.opus;0;0;tts;Cambio modalità dei sensori di distanza non riuscito.;ToF distance sensors: switching the working mode failed;tof切换工作模式失败，状态异常;
+2;31019;sd;basis/ultrasonic_switch_mode_failed.opus;0;0;tts;Cambio modalità del sensore a ultrasuoni non riuscito.;Ultrasonic sensor: switching the working mode failed;ultrasonic切换工作模式失败，状态异常;
+2;31020;sd;basis/bms_switch_mode_failed.opus;0;0;tts;Cambio modalità della batteria non riuscito.;Battery (BMS): switching the working mode failed;bms切换工作模式失败，状态异常;
+2;31021;sd;basis/led_switch_mode_failed.opus;0;0;tts;Cambio modalità delle luci non riuscito.;LEDs: switching the working mode failed;led切换工作模式失败，状态异常;
+2;31022;sd;basis/touch_switch_mode_failed.opus;0;0;tts;Cambio modalità del sensore tattile non riuscito.;Touch sensor: switching the working mode failed;touch切换工作模式失败，状态异常;
+2;31023;sd;basis/uwb_switch_mode_failed.opus;0;0;tts;Cambio modalità dell'UWB non riuscito.;UWB: switching the working mode failed;uwb切换工作模式失败，状态异常;
+2;31024;sd;basis/audio_switch_mode_failed.opus;0;0;tts;Cambio modalità dell'audio non riuscito.;Audio: switching the working mode failed;audio切换工作模式失败，状态异常;
+2;31025;sd;basis/motion_switch_mode_failed.opus;0;0;tts;Cambio modalità dei motori non riuscito.;Motion (motors): switching the working mode failed;motion切换工作模式失败，状态异常;
+2;31026;sd;basis/sensor_switch_mode_failed.opus;0;0;tts;Cambio modalità dei sensori non riuscito.;Sensors: switching the working mode failed;sensor切换工作模式失败，状态异常;
+2;31027;sd;basis/device_switch_mode_failed.opus;0;0;tts;Cambio modalità dei dispositivi non riuscito.;Devices: switching the working mode failed;device切换工作模式失败，状态异常;
+2;31028;sd;camera/bone_point_start.opus;0;0;tts;Conteggio esercizi avviato. Mettiti a circa un metro, di fronte alla fotocamera.;Exercise counting: stand about 1 m away, facing the camera;运动计数开始，请距离摄像头1m左右，且正对摄像头;
+2;31029;sd;camera/bone_point_detecting.opus;0;0;tts;Vedo più persone. Resta da solo nell'inquadratura.;More than one person, keep only one in view;检测到多个人，请在当前视野下保持一个人;
+2;31030;sd;camera/bone_point_back.opus;0;0;tts;Fai un passo indietro.;Step back a little;请向后退一点;
+2;31031;sd;camera/bone_point_left.opus;0;0;tts;Spostati un po' a sinistra.;Move a little to the left;请向左移一点;
+2;31032;sd;camera/bone_point_right.opus;0;0;tts;Spostati un po' a destra.;Move a little to the right;请向右移一点;
+2;31033;sd;camera/model_loading_start.opus;0;0;tts;Carico il modello, attendi.;Loading the model, please wait;开始加载模型，请稍后;
+2;31034;sd;camera/model_loading_complete.opus;0;0;tts;Modello caricato.;Model loaded;模型加载完成;
+2;31035;sd;wifi/wifi_connected_unknown_net.opus;0;0;tts;Connesso a una rete senza password.;Connected to a network without password;已连接无密码的网络;
+2;31036;sd;wifi/wifi_failed_please_retry.opus;0;0;tts;Avvio non riuscito. Riprova.;Start failed, try again;启动失败，请重试;
+2;31037;sd;tracking/follow_tags_lost.opus;0;0;tts;Non trovo il tag da seguire.;Cannot find the tag to follow;找不到要跟随的标签;
+2;31050;sd;camera/model_version_old.opus;0;0;tts;Il modello AI è vecchio. Collegami a internet per aggiornarlo.;AI model is old, connect to the internet to update;AI模型版本较老，请联网更新;
+2;31051;sd;camera/model_version_update_success.opus;0;0;tts;Modello AI aggiornato.;AI model updated;AI模型更新成功;
+2;31052;sd;camera/model_version_update_fail.opus;0;0;tts;Aggiornamento del modello AI non riuscito. Riavviami e riprova.;AI model update failed, restart and try again;AI模型更新失败，请重启后重试;
+2;31053;sd;basis/move_failed.opus;0;0;tts;Movimento non riuscito.;Move failed;运动执行失败;
+2;31054;sd;basis/camera_self_check_failed.opus;0;0;tts;Controllo della fotocamera non riuscito.;Camera self-check failed;camera自检失败，状态异常;
+2;31055;sd;basis/bluetooth_selfCheck_failed.opus;0;0;tts;Controllo del Bluetooth non riuscito.;Bluetooth self-check failed;;meaning from the file name
+2;31056;sd;basis/Realsense_selfCheck_failed.opus;0;0;tts;Controllo della camera di profondità non riuscito.;RealSense depth camera self-check failed;;meaning from the file name
+2;31057;sd;basis/algorithm_manager_selfCheck_failed.opus;0;0;tts;Controllo del gestore degli algoritmi non riuscito.;Algorithm manager self-check failed;;meaning from the file name
+2;40000;sd;audio/voice_command_prompt.opus;0;0;tts;Dimmi un comando.;Voice command prompt, about 4 s, content not documented;;meaning from the file name
+2;40001;sd;audio/powering_canot_control_device.opus;0;0;tts;Accensione in corso. Non posso ancora eseguire comandi.;Powering up, the device cannot be controlled yet;;meaning from the file name
+3;9000;board;bootup;22;;keep;;Ready sound effect at boot;整机就绪音效;"not speech; could become your own boot sound"
+3;3000;board;test_hardware_audio;0;;keep;;Factory test: audio hardware;当前为语音硬件测试;factory test prompt
+3;3001;board;test_stage_one;0;;keep;;Factory test: stage one finished;第一阶段测试结束。请查看测试结果并记录后，进行第二阶段测试;factory test prompt
+3;3003;board;test_stage_three;0;;keep;;Factory test: stage three finished;第三阶段测试结束，请查看测试结果并记录;factory test prompt
+3;4000;board;dog_woof_7;0;;keep;;Bark (7);;"not speech; meaning from the file name"
+3;4001;board;dog_woof_100;0;;keep;;Bark (100);;"not speech; meaning from the file name"
+3;6000;board;barns_courtney;0;;keep;;Song: Barns Courtney;;"not speech; meaning from the file name"
+3;6001;board;thats_what;0;;keep;;Song: That's what;;"not speech; meaning from the file name"
+3;30000;sd;basis/dog_woof_7.opus;0;0;keep;;Bark (7);;"file missing on the dog: the id plays nothing today; meaning from the file name"
+3;30001;sd;basis/dog_woof_100.opus;0;0;keep;;Bark (100);;"file missing on the dog: the id plays nothing today; meaning from the file name"
+3;31039;sd;basis/paoji_laohua_start.opus;0;0;keep;;Factory burn-in test started;;"factory test prompt; meaning from the file name"
+3;31040;sd;basis/paoji_charging.opus;0;0;keep;;Factory burn-in test: charging;;"factory test prompt; meaning from the file name"
+3;31041;sd;basis/paoji_laohua_overtime.opus;0;0;keep;;Factory burn-in test overtime;;"factory test prompt; meaning from the file name"
+3;31042;sd;basis/paoji_shengwen_haodian_stop.opus;0;0;keep;;Factory heat and drain test stopped;;"factory test prompt; meaning from the file name"
+3;31043;sd;basis/paoji_shengwen_haodian_charging.opus;0;0;keep;;Factory heat and drain test: charging;;"factory test prompt; meaning from the file name"
+3;31044;sd;basis/paoji_move_start.opus;0;0;keep;;Factory run-in moves started;;"factory test prompt; meaning from the file name"
+3;31045;sd;basis/paoji_move_end.opus;0;0;keep;;Factory run-in moves finished;;"factory test prompt; meaning from the file name"
+3;31046;sd;basis/paoji_end.opus;0;0;keep;;Factory run-in test finished;;"factory test prompt; meaning from the file name"
+3;31047;sd;basis/paoji_charge_full.opus;0;0;keep;;Factory run-in test: charged;;"factory test prompt; meaning from the file name"
+3;31048;sd;basis/paoji_charge_lower.opus;0;0;keep;;Factory run-in test: battery low;;"factory test prompt; meaning from the file name"
+3;31049;sd;basis/paoji_connect_wire.opus;0;0;keep;;Factory run-in test: connect the cable;;"factory test prompt; meaning from the file name"
