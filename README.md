@@ -10,7 +10,7 @@
 [![Tests](https://img.shields.io/badge/tests-821%20passed-brightgreen.svg)](#tests)
 [![Status](https://img.shields.io/badge/status-tested%20on%20the%20real%20dog-green.svg)](#project-status)
 
-[Quick start](#quick-start) · [SDK](#the-sdk) · [App](#the-app) · [Emulator](#the-emulator) · [Probe](#the-probe-on-the-real-dog) · [Docs](#documentation) · [License](#license)
+[Quick start](#quick-start) · [SDK](#the-sdk) · [App](#the-app) · [Emulator](#the-emulator) · [Probe](#the-probe-on-the-real-dog) · [Docs](#documentation) · [Security](#security) · [License](#license)
 
 🇮🇹 [Guida dell'app in italiano](app2/README.md)
 
@@ -215,6 +215,30 @@ dog_cli.py, scan.py, make_qr.py, keepalive.ps1, watch_dog.sh, run_all.ps1
 | [`docs/design/contracts.md`](docs/design/contracts.md) | the binding API of the SDK, the emulator and the app |
 | [`docs/connection.md`](docs/connection.md) | the network, the Wi-Fi QR code, the control channel, `dog_cli.py` |
 | [`CHANGELOG.md`](CHANGELOG.md) | the releases |
+
+## Security
+
+The CyberDog 2 has a weakness by design, and this project relies on it.
+
+- The dog accepts any client that presents a certificate signed by its CA. Xiaomi publishes
+  that CA, a signed client certificate and its private key in
+  [`MiRoboticsLab/bridges`](https://github.com/MiRoboticsLab/bridges). Every CyberDog 2 that
+  uses this CA therefore trusts the same public key.
+- The dog checks neither the client's address nor its name. Anyone on the same network as the
+  dog who has those files can send it every command this project sends, including walking.
+- This project does not create the weakness. It makes the weakness easier to use, because it
+  provides a complete client.
+
+To protect your dog:
+
+- Keep the dog on a network that you control, such as the Windows hotspot in
+  [`docs/connection.md`](docs/connection.md). Never put it on a public or shared Wi-Fi network.
+- Turn the dog off, or take it off the network, when you do not use it.
+- Use this project only on a robot that you own or are allowed to control.
+
+The SDK refuses the firmware update, reboot, power off, developer unlock and leg calibration
+commands unless the caller passes `force=True`. `dog_cli.py` sends any raw request. These
+limits protect against mistakes in your own code, not against another client on the network.
 
 ## License
 
