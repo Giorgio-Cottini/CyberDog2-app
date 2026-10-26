@@ -46,5 +46,5 @@ the real dog.
 - The repository does not include the mTLS certificates. The README explains how to download
   them from Xiaomi's repository.
 
-[Unreleased]: https://github.com/Giorgio-Cottini/cyberdog2-control/compare/v2.0.0...HEAD
-[2.0.0]: https://github.com/Giorgio-Cottini/cyberdog2-control/releases/tag/v2.0.0
+[Unreleased]: https://github.com/Giorgio-Cottini/CyberDog2-app/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/Giorgio-Cottini/CyberDog2-app/releases/tag/v2.0.0

@@ -1,6 +1,6 @@
 <div align="center">
 
-# cyberdog2-control
+# CyberDog2-app
 
 **A Python SDK, a browser control app and a protocol emulator for the Xiaomi CyberDog 2.**
 
@@ -84,8 +84,8 @@ how to put the dog on the hotspot with a QR code.
 **1. Clone the repository and install the dependencies.**
 
 ```powershell
-git clone https://github.com/Giorgio-Cottini/cyberdog2-control.git
-cd cyberdog2-control
+git clone https://github.com/Giorgio-Cottini/CyberDog2-app.git
+cd CyberDog2-app
 python -m pip install -r requirements.txt
 ```
 
