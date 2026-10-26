@@ -25,6 +25,13 @@ if (-not $python) {
 }
 
 $url = "http://127.0.0.1:$Port/"
+# a server already running: open the page and stop here
+try {
+    Invoke-WebRequest -UseBasicParsing -Uri ($url + "api/catalog") -TimeoutSec 2 | Out-Null
+    Write-Host "  Server gia' avviato: apro la pagina $url"
+    if (-not $NoBrowser) { Start-Process $url }
+    exit 0
+} catch {}
 Write-Host ""
 Write-Host "  CyberDog app v2" -ForegroundColor Cyan
 Write-Host "  Apri nel browser:  $url"
