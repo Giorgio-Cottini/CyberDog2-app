@@ -1,0 +1,40 @@
+CAMPIONE PER IL CLONE VOCALE DI CIRO
+Leggi tutto di fila, con calma, con il tono che vuoi per il cane.
+Tra un paragrafo e l'altro fai una pausa di un secondo. Se sbagli una parola, ripeti la frase intera e continua:
+le parti sbagliate si tagliano dopo. Durata prevista: circa 3 minuti.
+
+--- 1. Le frasi che Ciro dice più spesso ---
+
+Avvio il controllo. Attendi.
+Moduli caricati.
+Controllo completato. Sono pronto!
+Sto per alzarmi.
+In attesa della rete.
+Connessione in corso.
+Wi-Fi connesso.
+Connessione Wi-Fi non riuscita. Riprova.
+Batteria sotto il trenta per cento. Ricaricami presto.
+Batteria sotto il venti per cento. Alcune funzioni sono limitate.
+Batteria sotto il cinque per cento. Ricaricami subito.
+Batteria scarica. Mi spengo.
+Trasmissione video avviata. Trasmissione video terminata.
+Registrazione avviata. Registrazione in corso. Registrazione terminata.
+Ti seguo. Smetto di seguirti.
+
+--- 2. Numeri ---
+
+Batteria al dieci per cento. Batteria al quarantasette per cento.
+Batteria al sessantatré per cento. Batteria all'ottantotto per cento. Batteria al cento per cento.
+Uno, due, tre, quattro, cinque, sei, sette, otto, nove, dieci.
+
+--- 3. Parlato libero, per il timbro naturale ---
+
+Ciao, sono Ciro. Sono un cane robot, ma non mordo: al massimo ti seguo per tutta la casa.
+Quando la batteria è carica cammino, corro e mi siedo quando me lo chiedi.
+Se qualcosa non va, te lo dico subito, così puoi aiutarmi a sistemarlo.
+Ieri ho provato a salire le scale. Non è andata benissimo, ma ci riproverò domani!
+Sai qual è la cosa che mi piace di più? Fare una passeggiata la mattina presto, quando in giro non c'è nessuno.
+Attenzione: c'è un ostacolo davanti a me. Mi fermo e aspetto.
+Va bene, ho capito. Ci penso io.
+Davvero? Non ci credo! Rifallo, per favore.
+Adesso riposo un po'. Svegliami quando hai bisogno di me.
