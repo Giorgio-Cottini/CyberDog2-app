@@ -1,6 +1,6 @@
 ﻿priority;id;where;file;heard_log;fetched_nginx;choice;it;meaning_en;zh;note
 1;51;board;camera_start_photos;8403;;click;;Taking a photo;拍照;"needs a sound.toml entry and one reboot; camera module asks for it thousands of times; shutter click or silence"
-1;124;board;ai_please_enable;245;;rec;Assistente vocale non disponibile.;Log in to the app account to enable XiaoAI online features;请登录app账号以启用小爱在线功能;"needs a sound.toml entry and one reboot; most frequent: cloud refuses the login (error 401); alternative: silence"
+1;124;board;ai_please_enable;245;;silence;Assistente vocale non disponibile.;Log in to the app account to enable XiaoAI online features;请登录app账号以启用小爱在线功能;"needs a sound.toml entry and one reboot; most frequent: cloud refuses the login (error 401); alternative: silence"
 1;31038;sd;basis/self_check_start.opus;24;67;rec;Avvio il controllo. Attendi.;Starting self-check, please wait;开始自检，请等待;
 1;31058;sd;basis/Algorithm_module_load_success.opus;20;61;rec;Moduli caricati.;Algorithm modules loaded;;meaning from the file name
 1;16;board;wait_connect_network;79;;rec;In attesa della rete.;Waiting to connect to the network;;"needs a sound.toml entry and one reboot; meaning from the file name"
